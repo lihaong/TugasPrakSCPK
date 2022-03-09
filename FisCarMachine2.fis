@@ -1,0 +1,89 @@
+[System]
+Name='FisCarMachine2'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Fuel_Type'
+Range=[0 200]
+NumMFs=3
+MF1='Octane_Rendah':'trapmf',[-103 -36.7 70 80]
+MF2='Octane_Sedang':'trimf',[80 90 100]
+MF3='Octane_Tinggi':'trapmf',[100 120 226 306]
+
+[Input2]
+Name='Engine_Size'
+Range=[0 10]
+NumMFs=3
+MF1='Kecil':'trapmf',[-3.75 -0.417 2.5 3.5]
+MF2='Sedang':'trimf',[3.5 5 6.5]
+MF3='Besar':'trapmf',[6.5 8 10.42 13.75]
+
+[Input3]
+Name='Engine_Type'
+Range=[0 20]
+NumMFs=3
+MF1='Kecil':'trimf',[2 3 4]
+MF2='Sedang':'trimf',[4 6.43 8]
+MF3='Besar':'trimf',[8 11.9873150105708 16]
+
+[Output1]
+Name='Horsepower'
+Range=[0 10]
+NumMFs=3
+MF1='Kecil':'trimf',[0 1.5 3]
+MF2='Sedang':'trimf',[2.99 4.53488372093023 5.93]
+MF3='Besar':'trimf',[5.99 8 10]
+
+[Output2]
+Name='Efficiency'
+Range=[0 10]
+NumMFs=3
+MF1='Irit':'trimf',[-4.3 0 3]
+MF2='Sedang':'trimf',[3.07885835095137 4.47885835095137 5.87885835095137]
+MF3='Boros':'trapmf',[6.01945031712474 7.40945031712474 11.3194503171247 13.2194503171247]
+
+[Output3]
+Name='Price'
+Range=[0 1]
+NumMFs=3
+MF1='Murah':'trimf',[-0.417 0 0.299154334038055]
+MF2='Sedang':'trimf',[0.305 0.449 0.673361522198732]
+MF3='Mahal':'trimf',[0.694503171247357 1 1.42]
+
+[Rules]
+1 1 1, 1 1 1 (1) : 1
+2 2 2, 2 2 2 (1) : 1
+3 3 3, 3 3 3 (1) : 1
+1 2 2, 1 1 2 (1) : 1
+2 2 2, 3 2 2 (1) : 1
+2 3 2, 3 2 3 (1) : 1
+3 2 3, 3 3 2 (1) : 1
+1 2 2, 1 1 2 (1) : 1
+2 3 3, 2 2 3 (1) : 1
+3 0 0, 3 3 0 (1) : 1
+2 0 0, 2 2 0 (1) : 1
+1 0 0, 1 1 0 (1) : 1
+0 3 0, 0 0 3 (1) : 1
+0 2 0, 0 0 2 (1) : 1
+0 1 0, 0 0 1 (1) : 1
+0 0 1, 0 1 0 (1) : 1
+0 0 2, 0 2 0 (1) : 1
+0 0 3, 0 3 0 (1) : 1
+0 3 3, 3 0 3 (1) : 1
+0 3 3, 2 0 3 (1) : 1
+0 3 2, 0 0 3 (1) : 1
+0 2 3, 0 0 3 (1) : 1
+0 1 1, 0 1 0 (1) : 1
+0 2 2, 0 2 0 (1) : 1
+0 3 2, 0 3 0 (1) : 1
+0 2 2, 3 0 2 (1) : 1
+0 2 2, 2 0 2 (1) : 1
