@@ -1,5 +1,5 @@
 # TugasPrakSCPK
-Nama : Muhammad Fajar Andikha\n
+Nama : Muhammad Fajar Andikha<br />
 NIM : 123200054
 Tugas Praktikum SCPK Fuzzy Logic
 # Hasil Screenshot
